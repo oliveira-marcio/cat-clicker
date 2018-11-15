@@ -2,7 +2,7 @@
 
 Just an experiment app with JQuery to make some DOM manipulation.
 
-The app uses MVP pattern and it was based in some exercises from [Udacity Full Stack Web Developer Nanodegree](https://www.udacity.com/course/full-stack-web-developer-nanodegree--nd004).
+The app uses MVVM pattern (aka, MVO - "Model View Octopus", lol) and it was based in some exercises from [Udacity Full Stack Web Developer Nanodegree](https://www.udacity.com/course/full-stack-web-developer-nanodegree--nd004).
 
 It's a simple app where users can manipulate an existing cat dataset and change some attributes as name, picture* and clicks. There's no data persistence.
 
