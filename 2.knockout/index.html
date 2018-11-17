@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>Cat Clicker</title>
+	</head>
+	<body>
+		<select data-bind="options: catList,
+											 optionsText: 'name',
+											 value: currentCat,
+                       optionsCaption: '(Select a cat)',
+											 event:{ change: catChanged}"></select>
+		<div data-bind="visible: currentCat, click: catClick">
+			<h2 data-bind="text: currentCat() ? currentCat().name : ''"></h2>
+			<img data-bind="attr: {src: currentCat() ? currentCat().imageFullPath : ''}">
+			<h3 data-bind="text: currentCat() ? currentCat().counterLabel : ''"></h3>
+		</div>
+		<div data-bind="visible: currentCat">
+			<button data-bind="text: displayAdmin() ? 'Cancel' : 'Admin',
+												 click: toggleDisplayAdmin"></button>
+			<div data-bind="visible: displayAdmin">
+				<form data-bind="submit: editCat">
+					<p>Name: <input data-bind="textInput: formCat() ? formCat().name : ''"></p>
+					<p>Image: <input data-bind="textInput: formCat() ? formCat().image : ''"></p>
+					<p>Clicks: <input data-bind="textInput: formCat() ? formCat().counter : ''"></p>
+					<input type='submit' value='Edit'>
+				</form>
+			</div>
+		</div>
+		<script src="js/knockout.js"></script>
+		<script src="js/app.js"></script>
+	</body>
+</html>
